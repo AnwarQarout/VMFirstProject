@@ -28,6 +28,7 @@ Get hostname and network configurations
     Log    ${networkConfigs}
 
 Copy Directory Into VM And Assure The Files Are Copied
+    Execute Command    rmdir toCopy
     Put Directory    toCopy    toCopy
     List Files In Directory    toCopy
     File Should Exist    toCopy/toCopy1.txt
