@@ -34,6 +34,8 @@ Copy Directory Into VM And Assure The Files Are Copied
     File Should Exist    toCopy/toCopy1.txt
     File Should Exist    toCopy/toCopy2.txt
     File Should Exist    toCopy/toCopy3.txt
+    ${count}    Execute Command    ls toCopy | wc -l
+    Should be equal    ${count}    3
 
 Delete files from directory in VM and assure that they dont exist
     Execute Command    rm toCopy/toCopy1.txt
@@ -42,3 +44,5 @@ Delete files from directory in VM and assure that they dont exist
     File Should Not Exist    toCopy/toCopy1.txt
     File Should Not Exist    toCopy/toCopy2.txt
     File Should Not Exist    toCopy/toCopy3.txt
+    ${count}    Execute Command    ls toCopy | wc -l
+    Should be equal    ${count}    0
