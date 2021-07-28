@@ -1,8 +1,9 @@
 *** Settings ***
 Suite Setup       Custom Setup
 Suite Teardown    Custom Teardown
-Library           SSHLibrary
 Resource          variables.robot
+Library           SSHLibrary
+Library           TestSSH.py
 
 *** Test Cases ***
 printInfoTC
